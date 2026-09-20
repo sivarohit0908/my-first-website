@@ -1,11 +1,628 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Audio Affairs | Pro Audio, Lighting & LED</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 11, 11, 0.94);
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #aaa;
+            font-size: 12px;
+            display: block;
+            letter-spacing: 3px;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #aaa;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 7% 80px;
+            background:
+                linear-gradient(to right, #0b0b0b 30%, rgba(11,11,11,0.65)),
+                url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .small-title {
+            color: #aaa;
+            letter-spacing: 4px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 0.95;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 1px solid white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            color: black;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            color: #999;
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #111;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #333;
+        }
+
+        .service {
+            background: #111;
+            padding: 40px 30px;
+            min-height: 220px;
+        }
+
+        .service-number {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 35px;
+        }
+
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #999;
+            font-size: 15px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .about-box {
+            border-left: 1px solid #555;
+            padding-left: 35px;
+        }
+
+        .about-box h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .about-box p {
+            color: #999;
+        }
+
+        /* EVENTS */
+
+        .events {
+            background: #111;
+        }
+
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .event {
+            border: 1px solid #2a2a2a;
+            padding: 30px;
+        }
+
+        .event h3 {
+            margin-bottom: 8px;
+        }
+
+        .event p {
+            color: #888;
+        }
+
+        /* GALLERY */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-item {
+            height: 260px;
+            background: #1b1b1b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border: 1px solid #252525;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #111;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 7%;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .service-grid,
+            .event-list,
+            .gallery-grid,
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .contact h2 {
+                font-size: 38px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is my first website.</p>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">
+            AUDIO AFFAIRS
+            <span>PRO AUDIO • LIGHTING • LED</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Live Event Production
+            </div>
+
+            <h1>
+                Built on ground.<br>
+                Trusted on stage.
+            </h1>
+
+            <p>
+                Professional audio, lighting and LED solutions
+                for live bands, corporate events, concerts and
+                movie promotions.
+            </p>
+
+            <a href="#contact" class="button">
+                Get in touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <div class="small-title">
+            What we do
+        </div>
+
+        <h2 class="section-title">
+            Our Services
+        </h2>
+
+        <p class="section-intro">
+            From sound engineering to stage lighting and LED
+            displays, we provide the technical setup required
+            to bring live events together.
+        </p>
+
+
+        <div class="service-grid">
+
+            <div class="service">
+                <div class="service-number">01</div>
+                <h3>Pro Audio</h3>
+                <p>
+                    Professional sound systems and live sound
+                    engineering for events of different scales.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">02</div>
+                <h3>Lighting</h3>
+                <p>
+                    Stage lighting solutions designed to support
+                    the energy and atmosphere of live events.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">03</div>
+                <h3>LED</h3>
+                <p>
+                    LED display solutions for concerts, promotions,
+                    corporate events and large venues.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-text">
+
+            <div class="small-title">
+                About Audio Affairs
+            </div>
+
+            <h2 class="section-title">
+                Experience that<br>
+                works behind the scenes.
+            </h2>
+
+            <p>
+                Audio Affairs works across live events, providing
+                professional technical production for concerts,
+                corporate gatherings, movie promotions and more.
+            </p>
+
+            <p>
+                Our focus is simple — reliable equipment,
+                experienced execution and a setup that works
+                when the show begins.
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <h3>
+                Built on ground.<br>
+                Trusted on stage.<br>
+                Engineered for impact.
+            </h3>
+
+            <p>
+                Every event has different requirements.
+                We work closely with production teams and
+                organisers to deliver the right technical setup
+                for the occasion.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENTS -->
+
+    <section class="events" id="events">
+
+        <div class="small-title">
+            Experience
+        </div>
+
+        <h2 class="section-title">
+            Events
+        </h2>
+
+        <p class="section-intro">
+            Technical production across a variety of live
+            environments and events.
+        </p>
+
+
+        <div class="event-list">
+
+            <div class="event">
+                <h3>Concerts</h3>
+                <p>
+                    Audio, lighting and LED production for live
+                    music performances.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Corporate Events</h3>
+                <p>
+                    Professional technical solutions for
+                    conferences and corporate gatherings.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Movie Promotions</h3>
+                <p>
+                    Event production support for film promotions
+                    and entertainment events.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Live Bands & Clubs</h3>
+                <p>
+                    Sound and lighting setups built for
+                    live musical performances.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Sporting Events</h3>
+                <p>
+                    Technical production support for sporting
+                    and social occasions.
+                </p>
+            </div>
+
+            <div class="event">
+                <h3>Special Events</h3>
+                <p>
+                    Custom technical setups based on the
+                    requirements of each event.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section id="gallery">
+
+        <div class="small-title">
+            Our work
+        </div>
+
+        <h2 class="section-title">
+            Gallery
+        </h2>
+
+        <p class="section-intro">
+            A selection of moments from our events.
+        </p>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                EVENT PHOTO
+            </div>
+
+            <div class="gallery-item">
+                EVENT PHOTO
+            </div>
+
+            <div class="gallery-item">
+                EVENT PHOTO
+            </div>
+
+            <div class="gallery-item">
+                EVENT PHOTO
+            </div>
+
+            <div class="gallery-item">
+                EVENT PHOTO
+            </div>
+
+            <div class="gallery-item">
+                EVENT PHOTO
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="small-title">
+            Let's work together
+        </div>
+
+        <h2>
+            Have an event?
+        </h2>
+
+        <p>
+            Get in touch with Audio Affairs for your next
+            event production requirement.
+        </p>
+
+        <a href="tel:+910000000000" class="button">
+            Contact us
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            © 2026 Audio Affairs
+        </div>
+
+        <div>
+            Pro Audio • Lighting • LED
+        </div>
+
+    </footer>
+
 </body>
 </html>
