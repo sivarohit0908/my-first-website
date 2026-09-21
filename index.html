@@ -147,12 +147,18 @@
             background: #333;
         }
 
-        .service {
-            background: #111;
-            padding: 40px 30px;
-            min-height: 220px;
-        }
+       .service {
+    background: #111;
+    padding: 40px 30px;
+    min-height: 220px;
+    border: 1px solid #222;
+    transition: 0.3s ease;
+}
 
+.service:hover {
+    border-color: #555;
+    transform: translateY(-4px);
+}
         .service-number {
             color: #777;
             font-size: 13px;
