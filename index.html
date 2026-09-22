@@ -33,32 +33,17 @@
         }
 
         /* NAVIGATION */
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(11, 11, 11, 0.94);
-            border-bottom: 1px solid #222;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 7%;
     display: flex;
-    gap: 30px;
-    list-style: none;
-    font-size: 14px;
+    align-items: center;
+    background: rgba(11, 11, 11, 0.94);
+    border-bottom: 1px solid #222;
+    z-index: 1000;
 }
 
 .menu-btn {
@@ -68,6 +53,21 @@
     margin-right: 25px;
     line-height: 1;
 }
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-right: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 14px;
+}
+      
         .nav-links a {
             color: #bbb;
             transition: 0.3s;
@@ -76,9 +76,6 @@
         .nav-links a:hover {
             color: white;
         }
-<div class="menu-btn">☰</div>
-<div class="logo">AUDIO AFFAIRS</div>
-<ul class="nav-links">
         /* HERO */
 
         .hero {
@@ -437,24 +434,18 @@
 
     <!-- NAVIGATION -->
 
-    <nav>
+  <nav>
+        <div class="menu-btn" onclick="openMenu()">☰</div>
 
-    <div class="menu-btn" onclick="openMenu()">
-        ☰
-    </div>
+        <div class="logo">AUDIO AFFAIRS</div>
 
-    <div class="logo">
-        AUDIO AFFAIRS
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#upcoming">Upcoming Events</a></li>
-        <li><a href="#founders">Founders</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-
-</nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Upcoming Events</a></li>
+            <li><a href="#founders">Founders</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
     
 
     <!-- HERO -->
