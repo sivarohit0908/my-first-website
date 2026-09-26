@@ -981,16 +981,17 @@ nav {
             Pro Audio • Lighting • LED
         </div>
 
-    </footer>
+   </footer>
 
-    <script>
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+<script>
+function openMenu() {
+    document.getElementById("sideMenu").classList.add("active");
+}
 
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
