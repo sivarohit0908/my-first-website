@@ -1,39 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Affairs | Pro Audio, Lighting & LED</title>
 
-    <title>Audio Affairs | Pro Audio, Lighting & LED</title>
+<style>
 
-    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    line-height: 1.6;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0b0b;
-            color: #ffffff;
-            line-height: 1.6;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
 
-        /* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
     position: fixed;
     top: 0;
@@ -53,6 +54,7 @@ nav {
     cursor: pointer;
     margin-right: 25px;
     line-height: 1;
+    user-select: none;
 }
 
 .logo {
@@ -68,73 +70,21 @@ nav {
     list-style: none;
     font-size: 14px;
 }
-      
-        .nav-links a {
-            color: #bbb;
-            transition: 0.3s;
-        }
 
-        .nav-links a:hover {
-            color: white;
-        }
-        /* HERO */
+.nav-links a {
+    color: #bbb;
+    transition: 0.3s;
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 140px 7% 80px;
+.nav-links a:hover {
+    color: white;
+}
 
-            background:
-                linear-gradient(
-                    to right,
-                    #0b0b0b 30%,
-                    rgba(11, 11, 11, 0.65)
-                ),
-                url("image3.jpg.jpg")
-                center / cover;
-        }
 
-        .hero-content {
-            max-width: 720px;
-        }
+/* =========================
+   SIDE MENU
+========================= */
 
-        .small-title {
-            color: #888;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 7vw, 88px);
-            line-height: 1.02;
-            margin-bottom: 25px;
-            letter-spacing: -2px;
-        }
-
-        .hero p {
-            max-width: 600px;
-            color: #aaa;
-            font-size: 17px;
-            margin-bottom: 35px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 28px;
-            border: 1px solid white;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: white;
-            color: black;
-        }
 .side-menu {
     position: fixed;
     top: 0;
@@ -158,6 +108,7 @@ nav {
     font-size: 18px;
     padding: 15px 0;
     border-bottom: 1px solid #222;
+    transition: 0.3s;
 }
 
 .side-menu a:hover {
@@ -174,337 +125,457 @@ nav {
     font-size: 32px;
     cursor: pointer;
 }
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 7% 80px;
+
+    background:
+        linear-gradient(
+            to right,
+            #0b0b0b 30%,
+            rgba(11,11,11,0.65)
+        ),
+        url("image3.jpg.jpg") center / cover;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.small-title {
+    color: #888;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.02;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    max-width: 600px;
+    color: #aaa;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid white;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    transition: .3s;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    color: #999;
+    max-width: 650px;
+    font-size: 16px;
+    margin-bottom: 55px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    background: #0b0b0b;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service {
+    background: #111;
+    padding: 40px 30px;
+    min-height: 220px;
+    border: 1px solid #222;
+    transition: .3s ease;
+}
+
+.service:hover {
+    border-color: #555;
+    transform: translateY(-4px);
+}
+
+.service-number {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 35px;
+}
+
+.service h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.service p {
+    color: #999;
+    font-size: 15px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: #101010;
+}
+
+.about-text p {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about-highlight {
+    border-left: 1px solid #444;
+    padding-left: 30px;
+}
+
+.about-highlight h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-highlight p {
+    color: #999;
+}
+
+
+/* =========================
+   FOUNDERS
+========================= */
+
+.founders {
+    background: #0b0b0b;
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.founder {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px;
+}
+
+.founder h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.founder-role {
+    color: #777;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.founder p {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+.events {
+    background: #101010;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event {
+    border-top: 1px solid #333;
+    padding: 25px 0;
+}
+
+.event h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.event p {
+    color: #888;
+    font-size: 14px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    background: #0b0b0b;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    background: #111;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: .4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #101010;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: #999;
+    margin-bottom: 35px;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-details div {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.contact-details strong {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #666;
+    font-size: 13px;
+    border-top: 1px solid #222;
+    background: #0b0b0b;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .service-grid,
+    .event-list,
+    .gallery-grid,
+    .about,
+    .founder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        gap: 40px;
+    }
+
+    .contact h2 {
+        font-size: 42px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="menu-btn" onclick="openMenu()">☰</div>
+
+    <div class="logo">AUDIO AFFAIRS</div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#events">Upcoming Events</a>
+        </li>
+
+        <li>
+            <a href="#founders">Founders</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     SIDE MENU
+========================= -->
+
 <div class="side-menu" id="sideMenu">
 
     <button class="close-btn" onclick="closeMenu()">×</button>
 
     <a href="about.html">About</a>
+
     <a href="gallery.html">Gallery</a>
+
     <a href="staff.html">Staff</a>
+
     <a href="services.html">Services</a>
 
 </div>
-        /* GENERAL SECTIONS */
 
-        section {
-            padding: 100px 7%;
-        }
 
-        .section-title {
-            font-size: 52px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .section-intro {
-            color: #999;
-            max-width: 650px;
-            font-size: 16px;
-            margin-bottom: 55px;
-        }
-
-        /* SERVICES */
-
-        .services {
-            background: #0b0b0b;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .service {
-            background: #111;
-            padding: 40px 30px;
-            min-height: 220px;
-            border: 1px solid #222;
-            transition: 0.3s ease;
-        }
-
-        .service:hover {
-            border-color: #555;
-            transform: translateY(-4px);
-        }
-
-        .service-number {
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 35px;
-        }
-
-        .service h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-        }
-
-        .service p {
-            color: #999;
-            font-size: 15px;
-        }
-
-        /* ABOUT */
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            background: #101010;
-        }
-
-        .about-text p {
-            color: #aaa;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .about-highlight {
-            border-left: 1px solid #444;
-            padding-left: 30px;
-        }
-
-        .about-highlight h3 {
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        .about-highlight p {
-            color: #999;
-        }
-
-        /* FOUNDERS */
-
-        .founders {
-            background: #0b0b0b;
-        }
-
-        .founder-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .founder {
-            background: #111;
-            border: 1px solid #222;
-            padding: 40px;
-        }
-
-        .founder h3 {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        .founder-role {
-            color: #777;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-        }
-
-        .founder p {
-            color: #999;
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        /* EVENTS */
-
-        .events {
-            background: #101010;
-        }
-
-        .event-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .event {
-            border-top: 1px solid #333;
-            padding: 25px 0;
-        }
-
-        .event h3 {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .event p {
-            color: #888;
-            font-size: 14px;
-        }
-
-        /* GALLERY */
-
-        .gallery {
-            background: #0b0b0b;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            background: #111;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.03);
-        }
-
-        /* CONTACT */
-
-        .contact {
-            background: #101010;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 60px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            color: #999;
-            margin-bottom: 35px;
-        }
-
-        .contact-details {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-details div {
-            color: #aaa;
-            font-size: 15px;
-        }
-
-        .contact-details strong {
-            color: white;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            padding: 30px 7%;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            color: #666;
-            font-size: 13px;
-            border-top: 1px solid #222;
-            background: #0b0b0b;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-            .menu-btn {
-    display: block;
-}
-            .hero {
-                padding-top: 130px;
-            }
-
-            section {
-                padding: 70px 6%;
-            }
-
-            .section-title {
-                font-size: 40px;
-            }
-
-            .hero h1 {
-                font-size: 50px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .service-grid,
-            .event-list,
-            .gallery-grid,
-            .about,
-            .founder-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about {
-                gap: 40px;
-            }
-
-            .contact h2 {
-                font-size: 42px;
-            }
-
-            .gallery-item img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <!-- NAVIGATION -->
-
-  <nav>
-        <div class="menu-btn" onclick="openMenu()">☰</div>
-
-        <div class="logo">AUDIO AFFAIRS</div>
-
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#events">Upcoming Events</a></li>
-            <li><a href="#founders">Founders</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-
-    <!-- HERO -->
-
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="small-title">Live Event Production</div>
+        <div class="small-title">
+            Live Event Production
+        </div>
 
         <h1>
             Built on ground.<br>
@@ -512,486 +583,457 @@ nav {
         </h1>
 
         <p>
-            Professional audio, lighting and LED solutions for
-            live bands, corporate events, concerts and movie promotions.
+            Professional audio, lighting and LED solutions
+            for live bands, corporate events, concerts and
+            movie promotions.
         </p>
 
-        <a href="#contact" class="button">Get a Quote</a>
+        <a href="#contact" class="button">
+            Get a Quote
+        </a>
 
     </div>
 
 </section>
 
-    <!-- SERVICES -->
 
-    <section class="services" id="services">
+<!-- =========================
+     SERVICES
+========================= -->
 
-        <div class="small-title">
-            What we do
-        </div>
+<section class="services" id="services">
 
-        <h2 class="section-title">
-            Our Services
-        </h2>
+    <h2 class="section-title">
+        What we do.
+    </h2>
 
-        <p class="section-intro">
-            From sound engineering to stage lighting and LED
-            displays, we provide the technical setup required
-            to bring live events together.
-        </p>
+    <p class="section-intro">
+        Complete technical production solutions for
+        events of every scale.
+    </p>
 
-        <div class="service-grid">
+    <div class="service-grid">
 
-            <div class="service">
+        <div class="service">
 
-                <div class="service-number">
-                    01
-                </div>
-
-                <h3>
-                    Pro Audio
-                </h3>
-
-                <p>
-                    Professional sound systems and live sound
-                    engineering for events of different scales.
-                </p>
-
+            <div class="service-number">
+                01
             </div>
 
-
-            <div class="service">
-
-                <div class="service-number">
-                    02
-                </div>
-
-                <h3>
-                    Lighting
-                </h3>
-
-                <p>
-                    Stage lighting solutions designed to support
-                    the energy and atmosphere of live events.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-number">
-                    03
-                </div>
-
-                <h3>
-                    LED
-                </h3>
-
-                <p>
-                    LED display solutions for concerts, promotions,
-                    corporate events and large venues.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="about" id="about">
-
-        <div>
-
-            <div class="small-title">
-                About Audio Affairs
-            </div>
-
-            <h2 class="section-title">
-                Your events.<br>
-                Our expertise.
-            </h2>
-
-        </div>
-
-
-        <div class="about-text">
+            <h3>
+                Pro Audio
+            </h3>
 
             <p>
-                Audio Affairs is a premium sound solutions company
-                based in Hyderabad, delivering exceptional audio
-                experiences for events, concerts and corporate
-                gatherings.
-            </p>
-
-            <p>
-                With cutting-edge equipment and a commitment to
-                quality, we ensure every event sounds extraordinary.
-            </p>
-
-            <p>
-                Your events, our expertise — together, we create
-                unforgettable memories.
+                Professional sound systems and audio
+                solutions designed for concerts, corporate
+                events, live bands and large-scale productions.
             </p>
 
         </div>
 
-    </section>
 
+        <div class="service">
 
-    <!-- FOUNDERS -->
+            <div class="service-number">
+                02
+            </div>
 
-    <section class="founders" id="founders">
+            <h3>
+                Lighting
+            </h3>
 
-        <div class="small-title">
-            The people behind Audio Affairs
+            <p>
+                Event lighting solutions that enhance
+                stages, performances, venues and live
+                experiences.
+            </p>
+
         </div>
+
+
+        <div class="service">
+
+            <div class="service-number">
+                03
+            </div>
+
+            <h3>
+                LED
+            </h3>
+
+            <p>
+                LED screen and visual display solutions
+                for concerts, corporate events, promotions
+                and live productions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="about-text">
 
         <h2 class="section-title">
-            Our Founders
-        </h2>
-
-        <p class="section-intro">
-            Built by sound engineers with years of experience
-            across Hyderabad's live event and production industry.
-        </p>
-
-
-        <div class="founder-grid">
-
-
-            <div class="founder">
-
-                <h3>
-                    Y. Satya Chaitanya
-                </h3>
-
-                <div class="founder-role">
-                    Co-Founder
-                </div>
-
-                <p>
-                    Y. Satya Chaitanya began his journey as a trainee
-                    sound engineer at HICC with Highbrow Production
-                    Services in 2010.
-                </p>
-
-                <p>
-                    Driven by a passion to create opportunities and
-                    deliver excellence in audio, he later joined hands
-                    with his close friend and fellow sound engineer
-                    TV Krishna Reddy.
-                </p>
-
-                <p>
-                    In 2018, that shared vision became Audio Affairs.
-                    Since then, the company has worked across corporate
-                    events, movie and product promotions, club gigs,
-                    sporting events and social occasions.
-                </p>
-
-            </div>
-
-
-            <div class="founder">
-
-                <h3>
-                    TV Krishna Reddy
-                </h3>
-
-                <div class="founder-role">
-                    Co-Founder
-                </div>
-
-                <p>
-                    TV Krishna Reddy began his audio career in 2004
-                    with Planet Productions in Hyderabad.
-                </p>
-
-                <p>
-                    With a strong passion for excellence, he wanted
-                    to create opportunities and redefine standards
-                    within the audio and event industry.
-                </p>
-
-                <p>
-                    In 2018, he co-founded Audio Affairs with Y. Satya
-                    Chaitanya, building the company through consistent
-                    work across corporate events, promotional campaigns,
-                    club gigs, sporting events, product launches and
-                    social gatherings.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EVENTS -->
-
-    <section class="events" id="events">
-
-        <div class="small-title">
-            Where we work
-        </div>
-
-        <h2 class="section-title">
-            Events & Experiences
-        </h2>
-
-        <p class="section-intro">
-            Technical production support for different types of
-            live experiences and events.
-        </p>
-
-
-        <div class="event-list">
-
-            <div class="event">
-
-                <h3>
-                    Corporate Events
-                </h3>
-
-                <p>
-                    Professional audio and technical production
-                    for corporate gatherings and conferences.
-                </p>
-
-            </div>
-
-
-            <div class="event">
-
-                <h3>
-                    Concerts & Live Bands
-                </h3>
-
-                <p>
-                    Sound, lighting and LED solutions for live
-                    performances and concerts.
-                </p>
-
-            </div>
-
-
-            <div class="event">
-
-                <h3>
-                    Movie Promotions
-                </h3>
-
-                <p>
-                    Production support for movie promotions,
-                    launches and promotional events.
-                </p>
-
-            </div>
-
-
-            <div class="event">
-
-                <h3>
-                    Club Gigs
-                </h3>
-
-                <p>
-                    Audio and lighting solutions for club
-                    performances and entertainment events.
-                </p>
-
-            </div>
-
-
-            <div class="event">
-
-                <h3>
-                    Sporting Events
-                </h3>
-
-                <p>
-                    Event production solutions for sporting
-                    events and large gatherings.
-                </p>
-
-            </div>
-
-
-            <div class="event">
-
-                <h3>
-                    Social Occasions
-                </h3>
-
-                <p>
-                    Reliable audio and technical support for
-                    social celebrations and special occasions.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- GALLERY -->
-
-    <section class="gallery" id="gallery">
-
-        <div class="small-title">
-            From the ground
-        </div>
-
-        <h2 class="section-title">
-            Gallery
-        </h2>
-
-        <p class="section-intro">
-            A glimpse into some of the events and productions
-            powered by Audio Affairs.
-        </p>
-
-
-        <div class="gallery-grid">
-
-            <div class="gallery-item">
-                <img src="image1.jpg.jpg" alt="Audio Affairs event">
-            </div>
-
-            <div class="gallery-item">
-                <img src="image2.jpg.jpg" alt="Audio Affairs event">
-            </div>
-
-            <div class="gallery-item">
-                <img src="image3.jpg.jpg" alt="Audio Affairs event">
-            </div>
-
-            <div class="gallery-item">
-                <img src="image4.jpg.jpg" alt="Audio Affairs event">
-            </div>
-
-            <div class="gallery-item">
-                <img src="image5.jpg.jpg" alt="Audio Affairs event">
-            </div>
-
-            <div class="gallery-item">
-                <img src="image6.jpg.jpg" alt="Audio Affairs event">
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section class="contact" id="contact">
-
-        <div class="small-title">
-            Let's work together
-        </div>
-
-        <h2>
-            Bring your event<br>
-            to life.
+            About Audio Affairs.
         </h2>
 
         <p>
-            Talk to Audio Affairs about your next event,
-            production or technical requirement.
+            Audio Affairs is a premium sound solutions
+            company based in Hyderabad, delivering
+            exceptional audio experiences for events,
+            concerts and corporate gatherings.
         </p>
 
-        <a
-            href="mailto:audioaffairs.hyd@gmail.com"
-            class="button"
-        >
-            Get in touch
-        </a>
+        <p>
+            With cutting-edge equipment and a commitment
+            to quality, we ensure every event sounds
+            extraordinary.
+        </p>
+
+    </div>
 
 
-        <div class="contact-details">
+    <div class="about-highlight">
 
-            <div>
+        <h3>
+            Your events.<br>
+            Our expertise.
+        </h3>
 
-                <strong>
-                    Call
-                </strong>
+        <p>
+            From corporate events and movie promotions
+            to concerts, club gigs and sporting events,
+            we bring professional technical production
+            to every stage.
+        </p>
 
-                <a href="tel:7032920443">
-                    7032920443
-                </a>
+    </div>
 
-                <br>
+</section>
 
-                <a href="tel:9030456781">
-                    9030456781
-                </a>
 
+<!-- =========================
+     FOUNDERS
+========================= -->
+
+<section class="founders" id="founders">
+
+    <h2 class="section-title">
+        Our Founders.
+    </h2>
+
+    <p class="section-intro">
+        Built through years of experience in professional
+        audio and live event production.
+    </p>
+
+
+    <div class="founder-grid">
+
+
+        <!-- FOUNDER 1 -->
+
+        <div class="founder">
+
+            <h3>
+                Y. Satya Chaitanya
+            </h3>
+
+            <div class="founder-role">
+                Co-Founder
             </div>
 
+            <p>
+                Y. Satya Chaitanya began his journey as a
+                trainee sound engineer at HICC with Highbrow
+                Production Services in 2010.
+            </p>
 
-            <div>
-
-                <strong>
-                    Email
-                </strong>
-
-                <a href="mailto:audioaffairs.hyd@gmail.com">
-                    audioaffairs.hyd@gmail.com
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    Instagram
-                </strong>
-
-                <a
-                    href="https://www.instagram.com/audio.affairs/"
-                    target="_blank"
-                >
-                    @audio.affairs
-                </a>
-
-            </div>
+            <p>
+                With years of experience in professional
+                event audio, he co-founded Audio Affairs
+                with TV Krishna Reddy in 2018.
+            </p>
 
         </div>
 
-    </section>
+
+        <!-- FOUNDER 2 -->
+
+        <div class="founder">
+
+            <h3>
+                TV Krishna Reddy
+            </h3>
+
+            <div class="founder-role">
+                Co-Founder
+            </div>
+
+            <p>
+                TV Krishna Reddy began his audio career
+                with Planet Productions Hyderabad in 2004.
+            </p>
+
+            <p>
+                His experience in the professional audio
+                industry led to the founding of Audio Affairs
+                alongside Y. Satya Chaitanya in 2018.
+            </p>
+
+        </div>
 
 
-    <!-- FOOTER -->
+    </div>
 
-    <footer>
+</section>
+
+
+<!-- =========================
+     UPCOMING EVENTS
+========================= -->
+
+<section class="events" id="events">
+
+    <h2 class="section-title">
+        Upcoming Events.
+    </h2>
+
+    <p class="section-intro">
+        Follow our upcoming productions and live events.
+    </p>
+
+
+    <div class="event-list">
+
+
+        <div class="event">
+
+            <h3>
+                Event Name
+            </h3>
+
+            <p>
+                Date to be announced
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>
+                Event Name
+            </h3>
+
+            <p>
+                Date to be announced
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>
+                Event Name
+            </h3>
+
+            <p>
+                Date to be announced
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery" id="gallery">
+
+    <h2 class="section-title">
+        Gallery.
+    </h2>
+
+    <p class="section-intro">
+        A glimpse of our work on ground and on stage.
+    </p>
+
+
+    <div class="gallery-grid">
+
+
+        <div class="gallery-item">
+            <img src="image1.jpg.jpg" alt="Audio Affairs event">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="image2.jpg.jpg" alt="Audio Affairs event">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="image3.jpg.jpg" alt="Audio Affairs event">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="image4.jpg.jpg" alt="Audio Affairs event">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="image5.jpg.jpg" alt="Audio Affairs event">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="image6.jpg.jpg" alt="Audio Affairs event">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <h2>
+        Let's work together.
+    </h2>
+
+    <p>
+        Have an event coming up?
+        Get in touch with Audio Affairs.
+    </p>
+
+
+    <a
+        href="mailto:audioaffairs.hyd@gmail.com"
+        class="button"
+    >
+        Get a Quote
+    </a>
+
+
+    <div class="contact-details">
+
 
         <div>
-            © 2026 Audio Affairs
+
+            <strong>
+                Email
+            </strong>
+
+            audioaffairs.hyd@gmail.com
+
         </div>
+
 
         <div>
-            Pro Audio • Lighting • LED
+
+            <strong>
+                Phone
+            </strong>
+
+            7032920443
+
         </div>
 
-   </footer>
+
+        <div>
+
+            <strong>
+                Phone
+            </strong>
+
+            9030456781
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Instagram
+            </strong>
+
+            @audio.affairs
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        © 2026 Audio Affairs
+    </div>
+
+    <div>
+        Pro Audio • Lighting • LED
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
+
 function openMenu() {
-    document.getElementById("sideMenu").classList.add("active");
+
+    document
+        .getElementById("sideMenu")
+        .classList
+        .add("active");
+
 }
 
+
 function closeMenu() {
-    document.getElementById("sideMenu").classList.remove("active");
+
+    document
+        .getElementById("sideMenu")
+        .classList
+        .remove("active");
+
 }
+
 </script>
+
 
 </body>
 </html>
