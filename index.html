@@ -252,32 +252,60 @@ section {
 
 
 /* =========================
-   UPCOMING EVENTS
+   EVENT HIGHLIGHTS
 ========================= */
 
-.events {
-    background: #101010;
+.event-highlights {
+    background: #101820;
 }
 
-.event-list {
+.event-highlights .section-title {
+    color: #f1eee7;
+}
+
+.event-highlights .section-intro {
+    color: #a7adb5;
+}
+
+.event-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
+    margin-bottom: 40px;
 }
 
-.event {
-    border-top: 1px solid #333;
-    padding: 25px 0;
+.event-photo {
+    position: relative;
+    overflow: hidden;
+    background: #14263d;
+    border: 1px solid #26384d;
+    height: 260px;
 }
 
-.event h3 {
-    font-size: 22px;
-    margin-bottom: 8px;
+.event-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-.event p {
-    color: #888;
-    font-size: 14px;
+.event-photo:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-button {
+    text-align: center;
+}
+
+.gallery-button .button {
+    border-color: #d8c7a3;
+    color: #d8c7a3;
+}
+
+.gallery-button .button:hover {
+    background: #d8c7a3;
+    color: #101820;
 }
 
 
@@ -371,9 +399,16 @@ footer {
         font-size: 15px;
     }
 
-    .event-list,
     .founder-grid {
         grid-template-columns: 1fr;
+    }
+
+    .event-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .event-photo {
+        height: 260px;
     }
 
     .contact h2 {
@@ -383,6 +418,14 @@ footer {
     footer {
         flex-direction: column;
         gap: 10px;
+    }
+
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+
+    .event-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -413,10 +456,6 @@ footer {
 
         <li>
             <a href="#home">Home</a>
-        </li>
-
-        <li>
-            <a href="#events">Upcoming Events</a>
         </li>
 
         <li>
@@ -456,6 +495,10 @@ footer {
 
     <a href="services.html">
         Services
+    </a>
+
+    <a href="setups.html">
+        Setups
     </a>
 
 </div>
@@ -567,61 +610,62 @@ footer {
 
 
 <!-- =========================
-     UPCOMING EVENTS
+     EVENT HIGHLIGHTS
 ========================= -->
 
-<section class="events" id="events">
+<section class="event-highlights" id="event-highlights">
 
     <h2 class="section-title">
-        Upcoming Events.
+        Event Highlights.
     </h2>
 
     <p class="section-intro">
-        Follow our upcoming productions and live events.
+        A glimpse of the events, productions and live
+        experiences powered by Audio Affairs.
     </p>
 
 
-    <div class="event-list">
+    <div class="event-gallery">
 
 
-        <div class="event">
-
-            <h3>
-                Event Name
-            </h3>
-
-            <p>
-                Date to be announced
-            </p>
-
+        <div class="event-photo">
+            <img src="image1.jpg.jpg" alt="Audio Affairs Event">
         </div>
 
 
-        <div class="event">
-
-            <h3>
-                Event Name
-            </h3>
-
-            <p>
-                Date to be announced
-            </p>
-
+        <div class="event-photo">
+            <img src="image2.jpg.jpg" alt="Audio Affairs Event">
         </div>
 
 
-        <div class="event">
-
-            <h3>
-                Event Name
-            </h3>
-
-            <p>
-                Date to be announced
-            </p>
-
+        <div class="event-photo">
+            <img src="image3.jpg.jpg" alt="Audio Affairs Event">
         </div>
 
+
+        <div class="event-photo">
+            <img src="image4.jpg.jpg" alt="Audio Affairs Event">
+        </div>
+
+
+        <div class="event-photo">
+            <img src="image5.jpg.jpg" alt="Audio Affairs Event">
+        </div>
+
+
+        <div class="event-photo">
+            <img src="image6.jpg.jpg" alt="Audio Affairs Event">
+        </div>
+
+
+    </div>
+
+
+    <div class="gallery-button">
+
+        <a href="gallery.html" class="button">
+            View Full Gallery
+        </a>
 
     </div>
 
