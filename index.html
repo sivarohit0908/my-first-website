@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -211,83 +212,6 @@ section {
 
 
 /* =========================
-   SERVICES
-========================= */
-
-.services {
-    background: #0b0b0b;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.service {
-    background: #111;
-    padding: 40px 30px;
-    min-height: 220px;
-    border: 1px solid #222;
-    transition: .3s ease;
-}
-
-.service:hover {
-    border-color: #555;
-    transform: translateY(-4px);
-}
-
-.service-number {
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 35px;
-}
-
-.service h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-.service p {
-    color: #999;
-    font-size: 15px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    background: #101010;
-}
-
-.about-text p {
-    color: #aaa;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.about-highlight {
-    border-left: 1px solid #444;
-    padding-left: 30px;
-}
-
-.about-highlight h3 {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.about-highlight p {
-    color: #999;
-}
-
-
-/* =========================
    FOUNDERS
 ========================= */
 
@@ -328,7 +252,7 @@ section {
 
 
 /* =========================
-   EVENTS
+   UPCOMING EVENTS
 ========================= */
 
 .events {
@@ -354,37 +278,6 @@ section {
 .event p {
     color: #888;
     font-size: 14px;
-}
-
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery {
-    background: #0b0b0b;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-}
-
-.gallery-item {
-    overflow: hidden;
-    background: #111;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: .4s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.03);
 }
 
 
@@ -478,35 +371,24 @@ footer {
         font-size: 15px;
     }
 
-    .service-grid,
     .event-list,
-    .gallery-grid,
-    .about,
     .founder-grid {
         grid-template-columns: 1fr;
-    }
-
-    .about {
-        gap: 40px;
     }
 
     .contact h2 {
         font-size: 42px;
     }
 
-    .gallery-item img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-
     footer {
         flex-direction: column;
         gap: 10px;
     }
+
 }
 
 </style>
+
 </head>
 
 
@@ -519,9 +401,13 @@ footer {
 
 <nav>
 
-    <div class="menu-btn" onclick="openMenu()">☰</div>
+    <div class="menu-btn" onclick="openMenu()">
+        ☰
+    </div>
 
-    <div class="logo">AUDIO AFFAIRS</div>
+    <div class="logo">
+        AUDIO AFFAIRS
+    </div>
 
     <ul class="nav-links">
 
@@ -552,15 +438,25 @@ footer {
 
 <div class="side-menu" id="sideMenu">
 
-    <button class="close-btn" onclick="closeMenu()">×</button>
+    <button class="close-btn" onclick="closeMenu()">
+        ×
+    </button>
 
-    <a href="about.html">About</a>
+    <a href="about.html">
+        About
+    </a>
 
-    <a href="gallery.html">Gallery</a>
+    <a href="gallery.html">
+        Gallery
+    </a>
 
-    <a href="staff.html">Staff</a>
+    <a href="staff.html">
+        Staff
+    </a>
 
-    <a href="services.html">Services</a>
+    <a href="services.html">
+        Services
+    </a>
 
 </div>
 
@@ -598,131 +494,6 @@ footer {
 
 
 <!-- =========================
-     SERVICES
-========================= -->
-
-<section class="services" id="services">
-
-    <h2 class="section-title">
-        What we do.
-    </h2>
-
-    <p class="section-intro">
-        Complete technical production solutions for
-        events of every scale.
-    </p>
-
-    <div class="service-grid">
-
-        <div class="service">
-
-            <div class="service-number">
-                01
-            </div>
-
-            <h3>
-                Pro Audio
-            </h3>
-
-            <p>
-                Professional sound systems and audio
-                solutions designed for concerts, corporate
-                events, live bands and large-scale productions.
-            </p>
-
-        </div>
-
-
-        <div class="service">
-
-            <div class="service-number">
-                02
-            </div>
-
-            <h3>
-                Lighting
-            </h3>
-
-            <p>
-                Event lighting solutions that enhance
-                stages, performances, venues and live
-                experiences.
-            </p>
-
-        </div>
-
-
-        <div class="service">
-
-            <div class="service-number">
-                03
-            </div>
-
-            <h3>
-                LED
-            </h3>
-
-            <p>
-                LED screen and visual display solutions
-                for concerts, corporate events, promotions
-                and live productions.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="about" id="about">
-
-    <div class="about-text">
-
-        <h2 class="section-title">
-            About Audio Affairs.
-        </h2>
-
-        <p>
-            Audio Affairs is a premium sound solutions
-            company based in Hyderabad, delivering
-            exceptional audio experiences for events,
-            concerts and corporate gatherings.
-        </p>
-
-        <p>
-            With cutting-edge equipment and a commitment
-            to quality, we ensure every event sounds
-            extraordinary.
-        </p>
-
-    </div>
-
-
-    <div class="about-highlight">
-
-        <h3>
-            Your events.<br>
-            Our expertise.
-        </h3>
-
-        <p>
-            From corporate events and movie promotions
-            to concerts, club gigs and sporting events,
-            we bring professional technical production
-            to every stage.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
      FOUNDERS
 ========================= -->
 
@@ -740,8 +511,6 @@ footer {
 
     <div class="founder-grid">
 
-
-        <!-- FOUNDER 1 -->
 
         <div class="founder">
 
@@ -767,8 +536,6 @@ footer {
 
         </div>
 
-
-        <!-- FOUNDER 2 -->
 
         <div class="founder">
 
@@ -853,59 +620,6 @@ footer {
                 Date to be announced
             </p>
 
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     GALLERY
-========================= -->
-
-<section class="gallery" id="gallery">
-
-    <h2 class="section-title">
-        Gallery.
-    </h2>
-
-    <p class="section-intro">
-        A glimpse of our work on ground and on stage.
-    </p>
-
-
-    <div class="gallery-grid">
-
-
-        <div class="gallery-item">
-            <img src="image1.jpg.jpg" alt="Audio Affairs event">
-        </div>
-
-
-        <div class="gallery-item">
-            <img src="image2.jpg.jpg" alt="Audio Affairs event">
-        </div>
-
-
-        <div class="gallery-item">
-            <img src="image3.jpg.jpg" alt="Audio Affairs event">
-        </div>
-
-
-        <div class="gallery-item">
-            <img src="image4.jpg.jpg" alt="Audio Affairs event">
-        </div>
-
-
-        <div class="gallery-item">
-            <img src="image5.jpg.jpg" alt="Audio Affairs event">
-        </div>
-
-
-        <div class="gallery-item">
-            <img src="image6.jpg.jpg" alt="Audio Affairs event">
         </div>
 
 
