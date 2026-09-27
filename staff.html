@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Staff | Audio Affairs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            background: rgba(11, 11, 11, 0.96);
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+        .menu-btn {
+            font-size: 28px;
+            cursor: pointer;
+            margin-right: 25px;
+            line-height: 1;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            margin-left: auto;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            border: 1px solid #444;
+            padding: 10px 18px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: #111;
+            padding: 90px 35px 30px;
+            z-index: 2000;
+            transition: 0.3s ease;
+            border-right: 1px solid #333;
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+
+        .side-menu a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            padding: 16px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .side-menu a:hover {
+            color: #aaa;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        /* Main */
+        main {
+            padding: 130px 7% 80px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .page-title span {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .page-title h1 {
+            font-size: 42px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .page-title p {
+            color: #999;
+            margin-top: 14px;
+            font-size: 15px;
+        }
+
+        /* Staff Grid */
+        .staff-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .staff-card {
+            background: #111;
+            border: 1px solid #252525;
+            padding: 25px 22px;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        .staff-card:hover {
+            border-color: #555;
+            transform: translateY(-3px);
+        }
+
+        .staff-number {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .staff-card h2 {
+            font-size: 19px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .staff-card a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .staff-card a:hover {
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #222;
+            padding: 30px 7%;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+            .staff-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .page-title h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            nav {
+                padding: 0 5%;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .back-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            main {
+                padding: 115px 5% 60px;
+            }
+
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 30px;
+            }
+
+            .side-menu {
+                width: 280px;
+                left: -280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="menu-btn" onclick="openMenu()">☰</div>
+
+        <div class="logo">AUDIO AFFAIRS</div>
+
+        <a href="index.html" class="back-btn">Home</a>
+    </nav>
+
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+
+        <button class="close-btn" onclick="closeMenu()">×</button>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="staff.html">Staff</a>
+        <a href="services.html">Services</a>
+        <a href="quote.html">Get a Quote</a>
+        <a href="setups.html">Setups</a>
+
+    </div>
+
+
+    <!-- Staff -->
+    <main>
+
+        <div class="page-title">
+            <span>Audio Affairs</span>
+            <h1>Our Staff</h1>
+            <p>Our team behind every successful event.</p>
+        </div>
+
+
+        <div class="staff-grid">
+
+            <div class="staff-card">
+                <div class="staff-number">01</div>
+                <h2>Srikanth</h2>
+                <a href="tel:9030858621">903 085 8621</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">02</div>
+                <h2>Lakshma Reddy</h2>
+                <a href="tel:9885907010">988 590 7010</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">03</div>
+                <h2>Uma Mahesh</h2>
+                <a href="tel:+919391201657">+91 93912 01657</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">04</div>
+                <h2>Tarun</h2>
+                <a href="tel:+918341383853">+91 83413 83853</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">05</div>
+                <h2>Manikanta</h2>
+                <a href="tel:9701940799">97019 40799</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">06</div>
+                <h2>Chandu</h2>
+                <a href="tel:9505656510">950 565 6510</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">07</div>
+                <h2>Rajesh</h2>
+                <a href="tel:7892979043">789 297 9043</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">08</div>
+                <h2>Ranjith</h2>
+                <a href="tel:7780779950">778 077 9950</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">09</div>
+                <h2>Anil</h2>
+                <a href="tel:8341652781">834 165 2781</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">10</div>
+                <h2>Nagul</h2>
+                <a href="tel:+917207720966">+91 72077 20966</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">11</div>
+                <h2>Bramha Reddy</h2>
+                <a href="tel:+919052313329">+91 90523 13329</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">12</div>
+                <h2>Uma Mahesh Reddy</h2>
+                <a href="tel:+917416266695">+91 74162 66695</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">13</div>
+                <h2>Eswar</h2>
+                <a href="tel:7075956542">70759 56542</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">14</div>
+                <h2>Arvind</h2>
+                <a href="tel:6303506603">63035 06603</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">15</div>
+                <h2>Rk Reddy</h2>
+                <a href="tel:7377666777">7377666777</a>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-number">16</div>
+                <h2>Gaja</h2>
+                <a href="tel:6304094928">63040 94928</a>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Audio Affairs
+    </footer>
+
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").classList.add("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu").classList.remove("active");
+        }
+    </script>
+
+</body>
+</html>
