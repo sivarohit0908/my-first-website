@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Audio Affairs | Setups</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    background: rgba(11, 11, 11, 0.95);
+    border-bottom: 1px solid #222;
+    z-index: 1000;
+}
+
+.menu-btn {
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 25px;
+    line-height: 1;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-right: auto;
+}
+
+.home-link {
+    color: #bbb;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.home-link:hover {
+    color: #d8c7a3;
+}
+
+
+/* =========================
+   SIDE MENU
+========================= */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #111;
+    border-right: 1px solid #333;
+    padding: 90px 35px 40px;
+    z-index: 2000;
+    transition: left 0.3s ease;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.side-menu a {
+    display: block;
+    color: #bbb;
+    font-size: 18px;
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #d8c7a3;
+}
+
+.close-btn {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    padding: 170px 7% 70px;
+    border-bottom: 1px solid #222;
+    position: relative;
+}
+
+.page-header::before {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #284b6f;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: clamp(48px, 7vw, 80px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.page-header p {
+    max-width: 650px;
+    color: #999;
+    font-size: 16px;
+}
+
+
+/* =========================
+   SETUPS
+========================= */
+
+.setups {
+    padding: 80px 7%;
+}
+
+.setup-intro {
+    color: #999;
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+
+.setup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.setup-card {
+    background: #111;
+    border: 1px solid #222;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.setup-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 2px;
+    background: #284b6f;
+}
+
+.setup-placeholder {
+    text-align: center;
+    color: #666;
+}
+
+.setup-placeholder span {
+    display: block;
+    color: #b8a98a;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #666;
+    font-size: 13px;
+    border-top: 1px solid #222;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 20px 6%;
+    }
+
+    .home-link {
+        display: none;
+    }
+
+    .page-header {
+        padding: 140px 6% 60px;
+    }
+
+    .page-header h1 {
+        font-size: 50px;
+    }
+
+    .setups {
+        padding: 60px 6%;
+    }
+
+    .setup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .setup-card {
+        min-height: 280px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="menu-btn" onclick="openMenu()">
+        ☰
+    </div>
+
+    <div class="logo">
+        AUDIO AFFAIRS
+    </div>
+
+    <a href="index.html" class="home-link">
+        Home
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     SIDE MENU
+========================= -->
+
+<div class="side-menu" id="sideMenu">
+
+    <button class="close-btn" onclick="closeMenu()">
+        ×
+    </button>
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+    <a href="gallery.html">
+        Gallery
+    </a>
+
+    <a href="staff.html">
+        Staff
+    </a>
+
+    <a href="services.html">
+        Services
+    </a>
+
+    <a href="setups.html">
+        Setups
+    </a>
+
+</div>
+
+
+<!-- =========================
+     PAGE HEADER
+========================= -->
+
+<section class="page-header">
+
+    <h1>
+        Setups.
+    </h1>
+
+    <p>
+        A look at our professional audio, lighting and
+        event production setups.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     SETUPS
+========================= -->
+
+<section class="setups">
+
+    <p class="setup-intro">
+        Explore some of the setups and productions handled
+        by Audio Affairs. Videos and reels will be added here.
+    </p>
+
+
+    <div class="setup-grid">
+
+
+        <div class="setup-card">
+
+            <div class="setup-placeholder">
+
+                <span>
+                    Setup Reel
+                </span>
+
+                Video coming soon
+
+            </div>
+
+        </div>
+
+
+        <div class="setup-card">
+
+            <div class="setup-placeholder">
+
+                <span>
+                    Setup Reel
+                </span>
+
+                Video coming soon
+
+            </div>
+
+        </div>
+
+
+        <div class="setup-card">
+
+            <div class="setup-placeholder">
+
+                <span>
+                    Setup Reel
+                </span>
+
+                Video coming soon
+
+            </div>
+
+        </div>
+
+
+        <div class="setup-card">
+
+            <div class="setup-placeholder">
+
+                <span>
+                    Setup Reel
+                </span>
+
+                Video coming soon
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        © 2026 Audio Affairs
+    </div>
+
+    <div>
+        Pro Audio • Lighting • LED
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function openMenu() {
+
+    document
+        .getElementById("sideMenu")
+        .classList
+        .add("active");
+
+}
+
+function closeMenu() {
+
+    document
+        .getElementById("sideMenu")
+        .classList
+        .remove("active");
+
+}
+
+</script>
+
+
+</body>
+</html>
